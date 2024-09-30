@@ -33,10 +33,10 @@ pipeline {
     stage('Deploy with PM2') {
       steps {
         // Stop the application if it's already running
-        sh 'pm2 stop version-demo || true'
+        sh 'pm2 stop jenkins-test-nest || true'
 
         // Start the application with PM2
-        sh 'pm2 start dist/main.js --name version-demo'
+        sh 'pm2 start dist/main.js --name jenkins-test-nest'
 
         // Save the PM2 process list to restart after reboot
         sh 'pm2 save'
